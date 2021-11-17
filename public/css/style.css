@@ -1,10 +1,30 @@
 .container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-  }
-  .card-heading {
-    grid-column: span 12;
-  }
-  .card-content {
-    grid-column: span 8;
-  }
+  /* width: auto; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-content: center;
+  flex-wrap: wrap;
+  
+}
+.card-container {
+  border: solid lightblue 3px;
+  margin: 2em;
+  border-radius: 10px;
+  grid-template-rows: repeat(auto-fill, 120px);
+  background-color:rgb(114, 148, 241);
+}
+.card-heading {
+  text-align: center;
+  grid-column: span 4;
+  /* border: solid pink 3px; */
+  color: white;
+ 
+}
+.card-content {
+  grid-column: span 4;
+  /* border: solid orange 3px; */
+  padding: 1em;
+  text-align: start;
+  color: white;
+  
+}

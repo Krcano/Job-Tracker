@@ -28,14 +28,33 @@
 
 
 
-
+{{#if jobs.length}}
+<div class="container">
 
 {{!-- Created each individual card --}}
 {{#each jobs as |job| }}
 <div class="card-container">
   <div class="card-heading">
-    <h3 class="card-heading">{{job.title}} at {{job.company}}</h3>
+    <h2 class="card-heading">{{job.title}}</h2>
     </div> 
-  <div class="card-content"></div> 
+  <div class="card-content">
+      <h3>{{job.company}}</h3>
+      <h3>{{job.description}}</h3>
+      <h3>{{job.salary}}</h3>
+      <a href="{{job.url}}"><h3>{{job.url}}</h3></a>
+      {{!--drop down menu --}}
+      <form action="#">
+       <label for="status">Status</label>
+       <select>
+        <option value="Applied">Applied</option>
+        <option value="Interviewing">Interviewing</option>
+        <option value="Onboarding">Onboarding</option>
+        <option value="Rejected">Rejected</option>
+        </select>
+        {{!-- <input type="submit" value="Submit" /> --}}
+        </form>
+  </div> 
 </div>
 {{/each}}
+</div>
+{{/if}}
