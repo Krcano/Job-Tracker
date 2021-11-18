@@ -1,0 +1,19 @@
+[  {
+    "first_name": "Sal",
+    "last_name": "Cano",
+    "email": "sal@hotmail.com",
+    "password": "password12345"
+  },
+  {
+    "first_name": "Tom",
+    "last_name": "Cao",
+    "email": "tom@hotmail.com",
+    "password": "pass12345"
+  },
+  {
+    "first_name": "Jerry",
+    "last_name": "Can",
+    "email": "jerry@hotmail.com",
+    "password": "p543210"
+  }
+]

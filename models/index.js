@@ -2,7 +2,7 @@ const Users = require("./Users");
 const Jobs = require("./JobData");
 const Reviews = require("./Reviews");
 
-Users.hasmany(Jobs, {
+Users.hasMany(Jobs, {
   foreignKey: "users_id",
   onDelete: "CASCADE",
 });
