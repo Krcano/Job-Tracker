@@ -1,7 +1,8 @@
+//Creates and updates the Job table
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Jobs extends Model {}
+class Jobs extends Model { }
 
 Jobs.init(
   {
@@ -19,9 +20,9 @@ Jobs.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    location:{
-      type:DataTypes.STRING,
-      allowNull:true,
+    location: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     description: {
       type: DataTypes.STRING,
