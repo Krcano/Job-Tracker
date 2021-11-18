@@ -38,28 +38,30 @@
 
 {{!-- Created each individual card --}}
 {{#each jobs as |job| }}
-<div class="card-container">
-  <div class="card-heading">
-    <h2>{{job.title}}</h2>
-    </div> 
-  <div class="card-content">
-      <h3>{{job.company}}</h3>
-      <h3>{{job.description}}</h3>
-      <h3>{{job.salary}}</h3>
-      <a href="{{job.url}}"><h3>{{job.url}}</h3></a>
-      {{!--drop down menu --}}
-      <form action="#">
-       <label for="status">Status: </label>
-       <select>
-        <option value="Applied">Applied</option>
-        <option value="Interviewing">Interviewing</option>
-        <option value="Onboarding">Onboarding</option>
-        <option value="Rejected">Rejected</option>
-        </select>
-        {{!-- <input type="submit" value="Submit" /> --}}
-        </form>
-  </div> 
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{job.title}}</h5>
+     <h6 class="card-subtitle mb-2 text-muted">{{job.company}}</h6>
+     <p class="card-text">{{job.location}}</p>
+     <p class="card-text">{{job.description}}</p>
+      <p class="card-text">{{job.salary}}</p>
+      <a  href="{{job.url}}" class="card-link">{{job.url}}</a>
+  <div class="dropdown">
+  <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Status
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Applied</a></li>
+    <li><a class="dropdown-item" href="#">Interviewing</a></li>
+    <li><a class="dropdown-item" href="#">Onboarding</a></li>
+    <li><a class="dropdown-item" href="#">Rejected</a></li>
+
+  </ul>
+</div>
+  </div>
 </div>
 {{/each}}
 </div>
 {{/if}}
+
+

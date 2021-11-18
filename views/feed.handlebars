@@ -1,12 +1,17 @@
 {{!-- Community reviews live here like the facebook feed --}}
 {{!-- homepage should have reviews and possible job tracking cards --}}
-
+{{#if reviews.length}}
 <div class="card" style="width: 18rem;">
+    {{#each reviews as |review| }}
+    <div class="card-header">Created by {{job.user.name}} on {{job.date.created}}</div>
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <h5 class="card-title">{{reviews.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{review.users.name}}</h6>
+    <p class="card-text">{{review.review_text}}.</p>
+    {{!-- need to use the data-id to target a review and deltet that one --}}
+    <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button>
+    <button class="btn btn-sm btn-light" data-id="{{review.id}}">Update</button>
   </div>
+  {{/each}}
 </div>
+{{/if}}
