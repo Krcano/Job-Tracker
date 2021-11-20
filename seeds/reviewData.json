@@ -1,0 +1,17 @@
+[
+  {
+    "review_text": "Review content 1 ",
+    "name": "UCR instructor",
+    "users_id": 1
+  },
+  {
+    "review_text": "Review content 2 ",
+    "name": "UCR instructor 2",
+    "users_id": 2
+  },
+  {
+    "review_text": "Review content 3",
+    "name": "UCR instructor 3",
+    "users_id": 3
+  }
+]
