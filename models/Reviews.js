@@ -1,7 +1,8 @@
+//Creates and updates the review table
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Reviews extends Model {}
+class Reviews extends Model { }
 
 Reviews.init(
   {

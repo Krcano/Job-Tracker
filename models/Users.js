@@ -1,7 +1,8 @@
+//Creates and updates the users table
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Users extends Model {}
+class Users extends Model { }
 
 Users.init(
   {

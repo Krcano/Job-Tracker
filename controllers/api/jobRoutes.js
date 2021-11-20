@@ -9,6 +9,8 @@ router.post("/", withAuth, async (req, res) => {
             id: req.sesseion.id
         });
 
+        console.log(newJob);
+
         res.status(200).json(newJob);
     } catch (err) {
         res.status(400).json(err);
