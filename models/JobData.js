@@ -37,7 +37,7 @@ Jobs.init(
       allowNull: true,
     },
     status: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     users_id: {

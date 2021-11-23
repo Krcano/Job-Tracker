@@ -1,5 +1,5 @@
-const router = require("exress").Router();
-const { Users, Jobs, Reviews} = require("../models");
+const router = require("express").Router();
+const { Users, Jobs, Reviews } = require("../models");
 const withAuth = require("../utils/auth");
 
 // GET data and send it to homepage
@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
             ]
         })
 
-        const reviews = reviewsData.map((review) => review.get({ plain: true}));
+        const reviews = reviewsData.map((review) => review.get({ plain: true }));
 
         // Sending data to homepage.handlebars
         res.render("homepage", {

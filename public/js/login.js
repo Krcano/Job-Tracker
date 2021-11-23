@@ -2,7 +2,9 @@
 //const { query } = require("express");
 //const { Json } = require("sequelize/types/lib/utils");
 
+//login function
 const loginFormHandler = async (event) => {
+    console.log("Onload");
     event.preventDefault();
 
     //Collects values from the login form
@@ -10,16 +12,18 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector('#password-login').value.trim();
 
     if (email && password) {
+        console.log(email, password);
         //send a POST request to the API endpoint
         const response = await fetch('api/users/login', {
             method: 'POST',
-            body: JSON.stringify({ email, passowrd }),
-            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+            headers: { 'Content-Type': 'application/json' }
 
         });
-
+        console.log(response);
         if (response.ok) {
-            document.location.replace('/profile');
+            console.log("response ok");
+            document.location.replace('/feed');
         } else {
             alert(response.statusText);
         }
@@ -53,10 +57,10 @@ const signupFormHandler = async (event) => {
 
 //Listens to submit button on the login-form section and runs the login form function
 document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+    .querySelector('#login-btn')
+    .addEventListener('click', loginFormHandler);
 
 // Listens to the sign-up button on the signup form section and runs the signup form function
 document
-    .querySelector('signup-form')
-    .addEventListener('submit', signupFormHandler);
+    .querySelector('#signup-btn')
+    .addEventListener('click', signupFormHandler);
