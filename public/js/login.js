@@ -21,22 +21,11 @@ const loginFormHandler = async (event) => {
 
         });
         console.log(response);
+
         if (response.ok) {
-            console.log("response ok");
-            document.location.replace('/feed');
-            //send a POST request to the API endpoint
-            const response = await fetch('api/users/login', {
-                method: 'POST',
-                body: JSON.stringify({ email, passowrd }),
-                headers: { 'Content-Type': 'application/json' },
-
-            });
-
-            if (response.ok) {
-                document.location.replace('/profile');
-            } else {
-                alert(response.statusText);
-            }
+            document.location.replace('/profile');
+        } else {
+            alert(response.statusText);
         }
     }
 };
@@ -46,7 +35,7 @@ const signupFormHandler = async (event) => {
 
     // COllects the values from the sign up form
     const firstName = document.querySelector('#first_name-signup').value.trim();
-    const lastName = document.querySelector('#last-signup').value.trim();
+    const lastName = document.querySelector('#last_name-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
@@ -68,10 +57,10 @@ const signupFormHandler = async (event) => {
 
 //Listens to submit button on the login-form section and runs the login form function
 document
-    .querySelector('#login-btn')
+    .querySelector('#login-button')
     .addEventListener('click', loginFormHandler);
 
 // Listens to the sign-up button on the signup form section and runs the signup form function
 document
-    .querySelector('#signup-btn')
+    .querySelector('#signup-button')
     .addEventListener('click', signupFormHandler);
