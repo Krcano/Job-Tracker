@@ -1,4 +1,5 @@
 const sequelize = require("../config/connection");
+const { Reviews } = require("../models");
 const Users = require("../models/Users");
 const Reviews = require("../models/Reviews");
 const Jobs = require("../models/JobData")
@@ -9,7 +10,7 @@ const jobsData = require("./jobsData.json");
 
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({ force: false });
 
   await Users.bulkCreate(userData, {
     individualHooks: true,
@@ -28,6 +29,8 @@ const seedDatabase = async () => {
 
 
   process.exit(0);
+
+
 };
 
 seedDatabase();
