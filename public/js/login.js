@@ -2,13 +2,9 @@
 //const { query } = require("express");
 //const { Json } = require("sequelize/types/lib/utils");
 
-<<<<<<< HEAD
 //login function
 const loginFormHandler = async (event) => {
     console.log("Onload");
-=======
-const loginFormHandler = async (event) => {
->>>>>>> 84528fa2e75f6cfe2cb0efd9e8187ebe3079701e
     event.preventDefault();
 
     //Collects values from the login form
@@ -16,7 +12,6 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector('#password-login').value.trim();
 
     if (email && password) {
-<<<<<<< HEAD
         console.log(email, password);
         //send a POST request to the API endpoint
         const response = await fetch('api/users/login', {
@@ -29,20 +24,19 @@ const loginFormHandler = async (event) => {
         if (response.ok) {
             console.log("response ok");
             document.location.replace('/feed');
-=======
-        //send a POST request to the API endpoint
-        const response = await fetch('api/users/login', {
-            method: 'POST',
-            body: JSON.stringify({ email, passowrd }),
-            headers: { 'Content-Type': 'application/json' },
+            //send a POST request to the API endpoint
+            const response = await fetch('api/users/login', {
+                method: 'POST',
+                body: JSON.stringify({ email, passowrd }),
+                headers: { 'Content-Type': 'application/json' },
 
-        });
+            });
 
-        if (response.ok) {
-            document.location.replace('/profile');
->>>>>>> 84528fa2e75f6cfe2cb0efd9e8187ebe3079701e
-        } else {
-            alert(response.statusText);
+            if (response.ok) {
+                document.location.replace('/profile');
+            } else {
+                alert(response.statusText);
+            }
         }
     }
 };
@@ -74,7 +68,6 @@ const signupFormHandler = async (event) => {
 
 //Listens to submit button on the login-form section and runs the login form function
 document
-<<<<<<< HEAD
     .querySelector('#login-btn')
     .addEventListener('click', loginFormHandler);
 
@@ -82,12 +75,3 @@ document
 document
     .querySelector('#signup-btn')
     .addEventListener('click', signupFormHandler);
-=======
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
-
-// Listens to the sign-up button on the signup form section and runs the signup form function
-document
-    .querySelector('signup-form')
-    .addEventListener('submit', signupFormHandler);
->>>>>>> 84528fa2e75f6cfe2cb0efd9e8187ebe3079701e
