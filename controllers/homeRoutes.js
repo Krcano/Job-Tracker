@@ -4,6 +4,7 @@ const withAuth = require("../utils/auth");
 
 // GET data and send it to homepage
 router.get("/", async (req, res) => {
+  console.log("ONLOAD");
   try {
     // get a list of the cards to display
     const reviewsData = await Reviews.findAll({
