@@ -52,6 +52,7 @@ router.get("/profile", async (req, res) => {
 
 router.get("/login", (req, res) => {
     // If logged in send to dashboard
+    console.log("REDIRECTING !!! ---------------------");
     if (req.session.logged_in) {
         res.redirect("/profile");
         return;
