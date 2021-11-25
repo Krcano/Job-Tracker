@@ -1,5 +1,4 @@
 const sequelize = require("../config/connection");
-const { Reviews } = require("../models");
 const Users = require("../models/Users");
 const Reviews = require("../models/Reviews");
 const Jobs = require("../models/JobData")

@@ -3,7 +3,7 @@
 {{#if reviews.length}}
 <div class="card" style="width: 18rem;">
     {{#each reviews as |review| }}
-    <div class="card-header">Created by {{review.user.first_name}} {{review.users.last_name}} on {{review.date_created}}</div>
+    <div class="card-header">Created by {{review.user.first_name}} {{review.users.last_name}} on {{format_date review.date_created}}</div>
   <div class="card-body">
     <h5 class="card-title">{{review.name}}</h5>
     {{!-- Put company here from jobs table --}}

@@ -3,7 +3,7 @@ const { Users, Jobs, Reviews } = require("../models");
 const withAuth = require("../utils/auth");
 
 // GET data and send it to homepage
-router.get("/", async (req, res) => {
+router.get("/feed", async (req, res) => {
     try {
         // get a list of the cards to display
         const reviewsData = await Project.findAll({
@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
         const reviews = reviewsData.map((review) => review.get({ plain: true }));
 
         // Sending data to homepage.handlebars
-        res.render("homepage", {
+        res.render("feed", {
             reviews,
             logged_in: req.session.logged_in
         });

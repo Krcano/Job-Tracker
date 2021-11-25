@@ -1,6 +1,7 @@
 //Creates and updates the users table
-const { Model, DataTypes } = require("sequelize");
+const { Model, DataTypes, DATE } = require("sequelize");
 const sequelize = require("../config/connection");
+const bcrypt = require('bcrypt');
 
 class Users extends Model {
   checkPassword(loginPw) {
@@ -39,6 +40,11 @@ Users.init(
       validate: {
         len: [8, 32],
       },
+      // added confirmed for nodemailer purposes to check if theyre account has been verified or not
+      confirmed:{
+        type:DataTypes.BOOLEAN,
+        default:false
+      }
     },
   },
   {
