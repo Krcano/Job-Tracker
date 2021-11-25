@@ -1,7 +1,13 @@
+//connects to the router
 const router = require("express").Router();
+
+//connects to the jobs table in the databse
 const { Jobs } = require("../../models");
+
+//connects with our helper function
 const withAuth = require("../../utils/auth");
 
+// Takes us to the place to create a new job card
 router.post("/", withAuth, async (req, res) => {
     try {
         const newJob = await Jobs.create({
@@ -17,6 +23,7 @@ router.post("/", withAuth, async (req, res) => {
     }
 });
 
+// Allows us to delete the job card
 router.delete("/:id", withAuth, async (req, res) => {
     try {
         const jobData = await Jobs.destroy({
@@ -27,7 +34,7 @@ router.delete("/:id", withAuth, async (req, res) => {
         });
 
         if (!jobData) {
-            res.status(404).json({ message: "No job found"});
+            res.status(404).json({ message: "No job found" });
         }
 
         res.status(200).json(jobData);

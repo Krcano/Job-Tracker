@@ -3,14 +3,15 @@ const { Users, Jobs, Reviews } = require("../models");
 const withAuth = require("../utils/auth");
 
 // GET data and send it to homepage
+//url.com/feed
 router.get("/", async (req, res) => {
     try {
-        // get a list of the cards to display
-        const reviewsData = await Project.findAll({
+        // get a list of the job cards to display
+        const reviewsData = await Reviews.findAll({
             include: [
                 {
-                    model: Jobs,
-                    attributes: ["id", "name", "review_text"]
+                    model: Users,
+                    attributes: ["first_name", "last_name"]
                 }
             ]
         })
@@ -18,7 +19,7 @@ router.get("/", async (req, res) => {
         const reviews = reviewsData.map((review) => review.get({ plain: true }));
 
         // Sending data to homepage.handlebars
-        res.render("homepage", {
+        res.render("feed", {
             reviews,
             logged_in: req.session.logged_in
         });
@@ -27,8 +28,9 @@ router.get("/", async (req, res) => {
     }
 });
 
-// GET data and switch to homepage
-router.get("/profile", withAuth, async (req, res) => {
+// GET data and switch to user profile
+router.get("/profile", async (req, res) => {
+    console.log(req.body);
     try {
         // find logged in user
         const userData = await Users.findByPk(req.session.id, {

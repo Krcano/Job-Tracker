@@ -1,7 +1,14 @@
+
+//Connect to the router
 const router = require("express").Router();
+
+// Connect to the reviews table on the databse
 const { Reviews } = require("../../models");
+
+//Connect to the helper function
 const withAuth = require("../../utils/auth");
 
+// Take us to the place to create a new review
 router.post("/", withAuth, async (req, res) => {
     try {
         const newReview = await Reviews.create({
@@ -15,6 +22,7 @@ router.post("/", withAuth, async (req, res) => {
     }
 });
 
+// Allows the user to delete the review
 router.delete("/:id", withAuth, async (req, res) => {
     try {
         const reviewData = await Reviews.destroy({
@@ -25,12 +33,12 @@ router.delete("/:id", withAuth, async (req, res) => {
         });
 
         if (!reviewData) {
-            res.status(404).json({ message: "No review found"});
+            res.status(404).json({ message: "No review found" });
             return;
         }
 
         res.status(200).json(reviewData);
-    } catch(err) {
+    } catch (err) {
         res.status(500).json(err);
     }
 })
