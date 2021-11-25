@@ -5,12 +5,12 @@ const withAuth = require("../utils/auth");
 // GET data and send it to homepage
 router.get("/feed", async (req, res) => {
     try {
-        // get a list of the cards to display
-        const reviewsData = await Project.findAll({
+        // get a list of the job cards to display
+        const reviewsData = await Reviews.findAll({
             include: [
                 {
-                    model: Jobs,
-                    attributes: ["id", "name", "review_text"]
+                    model: Users,
+                    attributes: ["first_name", "last_name"]
                 }
             ]
         })
@@ -27,8 +27,9 @@ router.get("/feed", async (req, res) => {
     }
 });
 
-// GET data and switch to homepage
-router.get("/profile", withAuth, async (req, res) => {
+// GET data and switch to user profile
+router.get("/profile", async (req, res) => {
+    console.log(req.body);
     try {
         // find logged in user
         const userData = await Users.findByPk(req.session.id, {
@@ -50,6 +51,7 @@ router.get("/profile", withAuth, async (req, res) => {
 
 router.get("/login", (req, res) => {
     // If logged in send to dashboard
+    console.log("REDIRECTING !!! ---------------------");
     if (req.session.logged_in) {
         res.redirect("/profile");
         return;

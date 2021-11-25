@@ -1,8 +1,12 @@
+
+//connects to the router
 const router = require("express").Router();
+
+//connects to the Users table in the databse
 const { Users } = require("../../models");
 
-// Homepage AKA /feed
-router.post("/feed", async (req, res) => {
+// Takes us to the place so we can login or signup
+router.post("/", async (req, res) => {
     try {
         const userData = await Users.create(req.body);
 
@@ -17,6 +21,7 @@ router.post("/feed", async (req, res) => {
 });
 
 //login page
+//url.com/login
 router.post("/login", async (req, res) => {
     console.log(req.body);
 
@@ -55,7 +60,7 @@ router.post("/login", async (req, res) => {
 });
 
 
-//logout
+//logout option
 router.post("/logout", (req, res) => {
     if (req.session.logged_in) {
         req.session.destroy(() => {

@@ -48,7 +48,7 @@ const signupFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/feed');
         } else {
             alert(response.statusText);
         }
