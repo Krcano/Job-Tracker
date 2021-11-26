@@ -1,4 +1,3 @@
-
 //Connect to the router
 const router = require("express").Router();
 
@@ -28,7 +27,7 @@ router.delete("/:id", withAuth, async (req, res) => {
         const reviewData = await Reviews.destroy({
             where: {
                 id: req.params.id,
-                user_id: req.session.id
+                users_id: req.session.user_id
             }
         });
 
@@ -41,4 +40,4 @@ router.delete("/:id", withAuth, async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});

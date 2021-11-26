@@ -1,10 +1,5 @@
-// Used template from Week 14 Assignments
-//const { query } = require("express");
-//const { Json } = require("sequelize/types/lib/utils");
-
 //login function
 const loginFormHandler = async (event) => {
-    console.log("Onload");
     event.preventDefault();
 
     //Collects values from the login form
@@ -12,7 +7,6 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector('#password-login').value.trim();
 
     if (email && password) {
-        console.log(email, password);
         //send a POST request to the API endpoint
         const response = await fetch('api/users/login', {
             method: 'POST',
@@ -23,6 +17,7 @@ const loginFormHandler = async (event) => {
         console.log(response);
 
         if (response.ok) {
+            console.log("REPLACING LOCATION !!!!!!!!!!!")
             document.location.replace('/profile');
         } else {
             alert(response.statusText);
@@ -44,11 +39,11 @@ const signupFormHandler = async (event) => {
         const response = await fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({ firstName, lastName, email, password }),
-            headers: { 'ContentType': 'application/json' }
+            headers: { 'Content-Type': 'application/json' }
         });
 
         if (response.ok) {
-            document.location.replace('/feed');
+            document.location.replace('/profile');
         } else {
             alert(response.statusText);
         }

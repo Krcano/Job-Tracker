@@ -1,7 +1,7 @@
 {{!-- User Dashboard --}}
-<div class=>
-  <div class=>
-    <h2>Welcome, {{name}}!</h2>
+<div>
+  <div>
+    <h2>Welcome, {{user.first_name}}!</h2>
   </div>
 </div>
 
@@ -10,30 +10,30 @@
 {{!-- FORM LAYOUT for creating the job card --}}
 <form class="form new-project-form">
     <div class="form-group">
-    <label for="job-title">job title:</label>
-    <input class="form-input" type="text" id="job-title" name="job-title"/>
+      <label for="job-title">job title:</label>
+      <input class="form-input" type="text" id="job-title" name="job-title" />
     </div>
-  
+    
     <div class="form-group">
-    <label for="job-desc">description:</label>
-    <textarea class="form-input" id="job-desc" name="job-desc"></textarea>
-    </div>
-     <div class="form-group">
-    <label for="job-salary">salary:</label>
-    <textarea class="form-input" id="job-salary" name="job-salary"></textarea>
+      <label for="job-desc">description:</label>
+      <textarea class="form-input" id="job-desc" name="job-desc"></textarea>
     </div>
     <div class="form-group">
-    <button type="submit" class="btn btn-primary">Create</button>
+      <label for="job-salary">salary:</label>
+      <textarea class="form-input" id="job-salary" name="job-salary"></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Create</button>
     </div>
 </form>
 
 
 {{!-- CARD LAYOUT --}}
-{{#if jobs.length}}
+{{#if user.jobs.length}}
 <div class="container">
 
 {{!-- Created each individual card --}}
-{{#each jobs as |job| }}
+{{#each user.jobs as |job| }}
 <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{job.title}}</h5>

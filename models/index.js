@@ -6,6 +6,10 @@ Users.hasMany(Jobs, {
   foreignKey: "users_id",
   onDelete: "CASCADE",
 });
+Users.hasMany(Reviews, {
+  foreignKey: "users_id",
+  onDelete: "CASCADE"
+});
 Reviews.belongsTo(Users, {
   foreignKey: "users_id",
 });
