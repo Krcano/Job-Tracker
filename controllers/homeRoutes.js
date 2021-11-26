@@ -2,10 +2,8 @@ const router = require("express").Router();
 const { Users, Jobs, Reviews } = require("../models");
 const withAuth = require("../utils/auth");
 
-// GET data and send it to homepage
-router.get("/feed", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
-        // get a list of the job cards to display
         const reviewsData = await Reviews.findAll({
             include: [
                 {
@@ -17,7 +15,6 @@ router.get("/feed", async (req, res) => {
 
         const reviews = reviewsData.map((review) => review.get({ plain: true }));
 
-        // Sending data to homepage.handlebars
         res.render("feed", {
             reviews,
             logged_in: req.session.logged_in
@@ -27,22 +24,32 @@ router.get("/feed", async (req, res) => {
     }
 });
 
-// GET data and switch to user profile
 router.get("/profile", async (req, res) => {
-    console.log(req.body);
+    console.log("=============== homeRoute - get/profile ============");
     try {
-        // find logged in user
-        const userData = await Users.findByPk(req.session.id, {
+        const userData = await Users.findByPk(req.session.user_id, {
             attributes: { exclude: ["password"] },
-            include: [{ model: Jobs }],
+            include: [
+                {
+                    model: Jobs,
+                    where: {
+                        users_id: req.session.user_id
+                    }
+                },
+                {
+                    model: Reviews,
+                    where: {
+                        users_id: req.session.user_id
+                    }
+                }
+            ]
         });
-
+        console.log(userData)
         const user = userData.get({ plain: true });
 
-        // Take usre to profile page
         res.render("profile", {
-            ...user,
-            // logged_in: true
+            user,
+            logged_in: true
         });
     } catch (err) {
         res.status(500).json(err);
@@ -50,13 +57,11 @@ router.get("/profile", async (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-    // If logged in send to dashboard
-    console.log("REDIRECTING !!! ---------------------");
+    console.log("============= homeRoute - get/login =============")
     if (req.session.logged_in) {
         res.redirect("/profile");
         return;
     }
-
     res.render("login");
 });
 
