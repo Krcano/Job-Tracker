@@ -35,7 +35,35 @@
 {{!-- CARD LAYOUT --}}
 {{#if user.jobs.length}}
 <div class="container">
+<div><h1>Applied</h1>
+{{#each user.jobs as |job| }}
+{{!-- {{#if user.jobs.status === "applied"}} --}}
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{job.title}}</h5>
+     <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
+     <p class="card-text">{{job.location}}</p>
+     <p class="card-text">{{job.description}}</p>
+      <p class="card-text">{{job.salary}}</p>
+      <a  href="{{job.url}}" class="card-link">{{job.url}}</a>
+  <div class="dropdown">
+  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Status
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" id="applied" data-value="Applied" href="#">Applied</a></li>
+    <li><a class="dropdown-item" id="interviewing"data-value="Interviewing" href="#">Interviewing</a></li>
+    <li><a class="dropdown-item" id="onboarding" data-value="Onboarding" href="#">Onboarding</a></li>
+    <li><a class="dropdown-item" id="rejected"data-value="" href="#">Rejected</a></li>
 
+  </ul>
+</div>
+  </div>
+</div>
+{{!-- {{/if}} --}}
+{{/each}}</div>
+
+<div><h1>Interviewing</h1>
 {{!-- Created each individual card --}}
 {{#each user.jobs as |job| }}
 {{!-- {{#if user.jobs.status === "applied"}} --}}
@@ -52,10 +80,10 @@
     Status
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Applied</a></li>
-    <li><a class="dropdown-item" href="#">Interviewing</a></li>
-    <li><a class="dropdown-item" href="#">Onboarding</a></li>
-    <li><a class="dropdown-item" href="#">Rejected</a></li>
+    <li><a class="dropdown-item" id="applied" data-value="Applied" href="#">Applied</a></li>
+    <li><a class="dropdown-item" id="interviewing"data-value="Interviewing" href="#">Interviewing</a></li>
+    <li><a class="dropdown-item" id="onboarding" data-value="Onboarding" href="#">Onboarding</a></li>
+    <li><a class="dropdown-item" id="rejected"data-value="" href="#">Rejected</a></li>
 
   </ul>
 </div>
@@ -63,6 +91,67 @@
 </div>
 {{!-- {{/if}} --}}
 {{/each}}
+</div>
+<div><h1>Onboarding</h1>
+{{!-- Created each individual card --}}
+{{#each user.jobs as |job| }}
+{{!-- {{#if user.jobs.status === "applied"}} --}}
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{job.title}}</h5>
+     <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
+     <p class="card-text">{{job.location}}</p>
+     <p class="card-text">{{job.description}}</p>
+      <p class="card-text">{{job.salary}}</p>
+      <a  href="{{job.url}}" class="card-link">{{job.url}}</a>
+  <div class="dropdown">
+  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Status
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" id="applied" data-value="Applied" href="#">Applied</a></li>
+    <li><a class="dropdown-item" id="interviewing"data-value="Interviewing" href="#">Interviewing</a></li>
+    <li><a class="dropdown-item" id="onboarding" data-value="Onboarding" href="#">Onboarding</a></li>
+    <li><a class="dropdown-item" id="rejected"data-value="" href="#">Rejected</a></li>
+
+  </ul>
+</div>
+  </div>
+</div>
+{{!-- {{/if}} --}}
+{{/each}}
+</div>
+
+<div><h1>Rejected</h1>
+{{!-- Created each individual card --}}
+{{#each user.jobs as |job| }}
+{{!-- {{#if user.jobs.status === "applied"}} --}}
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{job.title}}</h5>
+     <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
+     <p class="card-text">{{job.location}}</p>
+     <p class="card-text">{{job.description}}</p>
+      <p class="card-text">{{job.salary}}</p>
+      <a  href="{{job.url}}" class="card-link">{{job.url}}</a>
+  <div class="dropdown">
+  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Status
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" id="applied" data-value="Applied" href="#">Applied</a></li>
+    <li><a class="dropdown-item" id="interviewing"data-value="Interviewing" href="#">Interviewing</a></li>
+    <li><a class="dropdown-item" id="onboarding" data-value="Onboarding" href="#">Onboarding</a></li>
+    <li><a class="dropdown-item" id="rejected"data-value="" href="#">Rejected</a></li>
+  </ul>
+  {{!-- <input type="text" id="value">
+		<input type="text" id="text"> --}}
+</div>
+  </div>
+</div>
+{{!-- {{/if}} --}}
+{{/each}}
+</div>
 </div>
 {{/if}}
 <script src="./js/profile.js"></script>
