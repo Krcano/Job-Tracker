@@ -36,15 +36,12 @@ const createReviewFormHandler = async (event) => {
 //   $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
 // });
 // vanilla js research
-function update() {
-  var select = document.getElementById('dropdown-menu');
-  var option = select.options[select.selectedIndex];
+// function getSelectedValue() {
+//   var selected = document.querySelector('.dropdown-menu').value;
+//   console.log(selected)
+// }
 
-  document.getElementById('value').value = option.value;
-  document.getElementById('text').value = option.text;
-}
 
-update();
 
 
 

@@ -38,26 +38,23 @@
 <div><h1>Applied</h1>
 {{#each user.jobs as |job| }}
 {{!-- {{#if user.jobs.status === "applied"}} --}}
-<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{job.title}}</h5>
      <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
      <p class="card-text">{{job.location}}</p>
      <p class="card-text">{{job.description}}</p>
       <p class="card-text">{{job.salary}}</p>
-      <a  href="{{job.url}}" class="card-link">{{job.url}}</a>
-  <div class="dropdown">
-  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Status
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" id="applied" data-value="Applied" href="#">Applied</a></li>
-    <li><a class="dropdown-item" id="interviewing"data-value="Interviewing" href="#">Interviewing</a></li>
-    <li><a class="dropdown-item" id="onboarding" data-value="Onboarding" href="#">Onboarding</a></li>
-    <li><a class="dropdown-item" id="rejected"data-value="" href="#">Rejected</a></li>
+      <a  href="{{job.url}}" class="card-link text-light">{{job.url}}</a>
+ 
+ <select class="form-select form-select-sm  mt-3 mb-3"  class="dropdown-menu" aria-label=".form-select-lg example">
+  <option selected >Select a status</option>
+  <option value="Applied">Applied</option>
+  <option value="Interviewing">Interviewing</option>
+  <option value="Onboarding">Onboarding</option>
+  <option value="Rejected">Rejected</option>
+</select>
 
-  </ul>
-</div>
   </div>
 </div>
 {{!-- {{/if}} --}}
@@ -67,26 +64,23 @@
 {{!-- Created each individual card --}}
 {{#each user.jobs as |job| }}
 {{!-- {{#if user.jobs.status === "applied"}} --}}
-<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{job.title}}</h5>
      <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
      <p class="card-text">{{job.location}}</p>
      <p class="card-text">{{job.description}}</p>
       <p class="card-text">{{job.salary}}</p>
-      <a  href="{{job.url}}" class="card-link">{{job.url}}</a>
-  <div class="dropdown">
-  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Status
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" id="applied" data-value="Applied" href="#">Applied</a></li>
-    <li><a class="dropdown-item" id="interviewing"data-value="Interviewing" href="#">Interviewing</a></li>
-    <li><a class="dropdown-item" id="onboarding" data-value="Onboarding" href="#">Onboarding</a></li>
-    <li><a class="dropdown-item" id="rejected"data-value="" href="#">Rejected</a></li>
+      <a  href="{{job.url}}" class="card-link text-light">{{job.url}}</a>
+ 
+ <select class="form-select form-select-sm  mt-3 mb-3"  class="dropdown-menu" aria-label=".form-select-lg example">
+  <option selected >Select a status</option>
+  <option value="Applied">Applied</option>
+  <option value="Interviewing">Interviewing</option>
+  <option value="Onboarding">Onboarding</option>
+  <option value="Rejected">Rejected</option>
+</select>
 
-  </ul>
-</div>
   </div>
 </div>
 {{!-- {{/if}} --}}
@@ -96,26 +90,23 @@
 {{!-- Created each individual card --}}
 {{#each user.jobs as |job| }}
 {{!-- {{#if user.jobs.status === "applied"}} --}}
-<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{job.title}}</h5>
      <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
      <p class="card-text">{{job.location}}</p>
      <p class="card-text">{{job.description}}</p>
       <p class="card-text">{{job.salary}}</p>
-      <a  href="{{job.url}}" class="card-link">{{job.url}}</a>
-  <div class="dropdown">
-  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Status
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" id="applied" data-value="Applied" href="#">Applied</a></li>
-    <li><a class="dropdown-item" id="interviewing"data-value="Interviewing" href="#">Interviewing</a></li>
-    <li><a class="dropdown-item" id="onboarding" data-value="Onboarding" href="#">Onboarding</a></li>
-    <li><a class="dropdown-item" id="rejected"data-value="" href="#">Rejected</a></li>
+      <a  href="{{job.url}}" class="card-link text-light">{{job.url}}</a>
+ 
+ <select class="form-select form-select-sm mt-3 mb-3"  class="dropdown-menu" aria-label=".form-select-lg example">
+  <option selected >Select a status</option>
+  <option value="Applied">Applied</option>
+  <option value="Interviewing">Interviewing</option>
+  <option value="Onboarding">Onboarding</option>
+  <option value="Rejected">Rejected</option>
+</select>
 
-  </ul>
-</div>
   </div>
 </div>
 {{!-- {{/if}} --}}
@@ -126,27 +117,23 @@
 {{!-- Created each individual card --}}
 {{#each user.jobs as |job| }}
 {{!-- {{#if user.jobs.status === "applied"}} --}}
-<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{job.title}}</h5>
      <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
      <p class="card-text">{{job.location}}</p>
      <p class="card-text">{{job.description}}</p>
       <p class="card-text">{{job.salary}}</p>
-      <a  href="{{job.url}}" class="card-link">{{job.url}}</a>
-  <div class="dropdown">
-  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Status
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" id="applied" data-value="Applied" href="#">Applied</a></li>
-    <li><a class="dropdown-item" id="interviewing"data-value="Interviewing" href="#">Interviewing</a></li>
-    <li><a class="dropdown-item" id="onboarding" data-value="Onboarding" href="#">Onboarding</a></li>
-    <li><a class="dropdown-item" id="rejected"data-value="" href="#">Rejected</a></li>
-  </ul>
-  {{!-- <input type="text" id="value">
-		<input type="text" id="text"> --}}
-</div>
+      <a  href="{{job.url}}" class="card-link text-light">{{job.url}}</a>
+ 
+ <select class="form-select form-select-sm  mt-3 mb-3"  class="dropdown-menu" aria-label=".form-select-lg example">
+  <option selected >Select a status</option>
+  <option value="Applied">Applied</option>
+  <option value="Interviewing">Interviewing</option>
+  <option value="Onboarding">Onboarding</option>
+  <option value="Rejected">Rejected</option>
+</select>
+
   </div>
 </div>
 {{!-- {{/if}} --}}
