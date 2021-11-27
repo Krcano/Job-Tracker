@@ -10,20 +10,24 @@
 {{!-- FORM LAYOUT for creating the job card --}}
 <form class="form new-project-form">
     <div class="form-group">
-      <label for="job-title">job title:</label>
-      <input class="form-input" type="text" id="job-title" name="job-title" />
+      {{!-- <label for="job-title">job title:</label> --}}
+      <input class="form-input" type="text" placeholder="Job Title"id="job-title" name="job-title" />
     </div>
     
     <div class="form-group">
-      <label for="job-desc">description:</label>
-      <textarea class="form-input" id="job-desc" name="job-desc"></textarea>
+      {{!-- <label for="job-desc">description:</label> --}}
+      <textarea class="form-input" placeholder="Description"id="job-desc" name="job-desc"></textarea>
     </div>
     <div class="form-group">
-      <label for="job-salary">salary:</label>
-      <textarea class="form-input" id="job-salary" name="job-salary"></textarea>
+      {{!-- <label for="job-company">Company:</label> --}}
+      <input class="form-input" placeholder="Company"id="job-company" type="text"name="job-company"></input>
+    </div>
+     <div class="form-group">
+      {{!-- <label for="job-salary">salary:</label> --}}
+      <input class="form-input" placeholder="Salary" type="text" id="job-salary" name="job-salary"></input>
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-primary">Create</button>
+      <button type="submit" id="job-submit" class="btn btn-primary">Create</button>
     </div>
 </form>
 
@@ -34,16 +38,17 @@
 
 {{!-- Created each individual card --}}
 {{#each user.jobs as |job| }}
+{{!-- {{#if user.jobs.status === "applied"}} --}}
 <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{job.title}}</h5>
-     <h6 class="card-subtitle mb-2 text-muted">{{job.company}}</h6>
+     <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
      <p class="card-text">{{job.location}}</p>
      <p class="card-text">{{job.description}}</p>
       <p class="card-text">{{job.salary}}</p>
       <a  href="{{job.url}}" class="card-link">{{job.url}}</a>
   <div class="dropdown">
-  <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Status
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -56,8 +61,10 @@
 </div>
   </div>
 </div>
+{{!-- {{/if}} --}}
 {{/each}}
 </div>
 {{/if}}
+<script src="./js/profile.js"></script>
 
 
