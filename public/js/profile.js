@@ -36,10 +36,9 @@ const createReviewFormHandler = async (event) => {
 //   $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
 // });
 // vanilla js research
-// function getSelectedValue() {
-//   var selected = document.querySelector('.dropdown-menu').value;
-//   console.log(selected)
-// }
+
+
+
 
 
 

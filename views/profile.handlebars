@@ -26,6 +26,10 @@
       {{!-- <label for="job-salary">salary:</label> --}}
       <input class="form-input" placeholder="Salary" type="text" id="job-salary" name="job-salary"></input>
     </div>
+      <div class="form-group">
+
+      <input class="form-input" placeholder="Status" type="text" id="job-status" name="job-status"></input>
+    </div>
     <div class="form-group">
       <button type="submit" id="job-submit" class="btn btn-primary">Create</button>
     </div>
@@ -35,7 +39,7 @@
 {{!-- CARD LAYOUT --}}
 {{#if user.jobs.length}}
 <div class="container">
-<div><h1>Applied</h1>
+<div><h1  class="text-center">Applied</h1>
 {{#each user.jobs as |job| }}
 {{!-- {{#if user.jobs.status === "applied"}} --}}
 <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
@@ -60,7 +64,7 @@
 {{!-- {{/if}} --}}
 {{/each}}</div>
 
-<div><h1>Interviewing</h1>
+<div ><h1  class="text-center">Interviewing</h1>
 {{!-- Created each individual card --}}
 {{#each user.jobs as |job| }}
 {{!-- {{#if user.jobs.status === "applied"}} --}}
@@ -86,7 +90,7 @@
 {{!-- {{/if}} --}}
 {{/each}}
 </div>
-<div><h1>Onboarding</h1>
+<div><h1 class="text-center">Onboarding</h1>
 {{!-- Created each individual card --}}
 {{#each user.jobs as |job| }}
 {{!-- {{#if user.jobs.status === "applied"}} --}}
@@ -113,7 +117,7 @@
 {{/each}}
 </div>
 
-<div><h1>Rejected</h1>
+<div><h1 class="text-center">Rejected</h1>
 {{!-- Created each individual card --}}
 {{#each user.jobs as |job| }}
 {{!-- {{#if user.jobs.status === "applied"}} --}}
@@ -126,7 +130,7 @@
       <p class="card-text">{{job.salary}}</p>
       <a  href="{{job.url}}" class="card-link text-light">{{job.url}}</a>
  
- <select class="form-select form-select-sm  mt-3 mb-3"  class="dropdown-menu" aria-label=".form-select-lg example">
+ <select class="form-select form-select-sm  mt-3 mb-3"   onchange="show()"class="dropdown-menu" aria-label=".form-select-lg example">
   <option selected >Select a status</option>
   <option value="Applied">Applied</option>
   <option value="Interviewing">Interviewing</option>
