@@ -24,6 +24,7 @@ router.post("/", withAuth, async (req, res) => {
 // Allows the user to delete the review
 router.delete("/:id", withAuth, async (req, res) => {
     try {
+        
         const reviewData = await Reviews.destroy({
             where: {
                 id: req.params.id,
