@@ -1,7 +1,8 @@
 {{!-- Community reviews live here like the facebook feed --}}
 {{!-- homepage should have reviews and job tracking cards --}}
+<div class="card-columns">
 {{#if reviews.length}}
-<div class="card" style="width: 18rem;">
+<div class="ms-5 mt-5 " style="width: 18rem;">
     {{#each reviews as |review| }}
     <div class="card-header">Created by {{review.user.first_name}} {{review.users.last_name}} on {{format_date review.date_created}}</div>
   <div class="card-body">
@@ -16,3 +17,4 @@
   {{/each}}
 </div>
 {{/if}}
+</div>

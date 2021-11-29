@@ -1,5 +1,5 @@
 {{!-- User Dashboard --}}
-<div>
+<div class="mt-4 ms-5">
   <div>
     <h2>Welcome, {{user.first_name}}!</h2>
   </div>
@@ -8,29 +8,28 @@
 {{!-- Where the jobs are--}}
 
 {{!-- FORM LAYOUT for creating the job card --}}
-<form class="form new-project-form">
-    <div class="form-group">
+<form class="row g-3 new-project-form ms-5 mx-auto">
+    <div class="">
       {{!-- <label for="job-title">job title:</label> --}}
-      <input class="form-input" type="text" placeholder="Job Title"id="job-title" name="job-title" />
+      <input class="form-input form-control-lg input-group-md col-3" type="text" placeholder="Job Title"id="job-title" name="job-title" />
     </div>
-    
-    <div class="form-group">
-      {{!-- <label for="job-desc">description:</label> --}}
-      <textarea class="form-input" placeholder="Description"id="job-desc" name="job-desc"></textarea>
-    </div>
-    <div class="form-group">
+    <div class="">
       {{!-- <label for="job-company">Company:</label> --}}
-      <input class="form-input" placeholder="Company"id="job-company" type="text"name="job-company"></input>
+      <input class="form-input  form-control-lg col-3" placeholder="Company"id="job-company" type="text"name="job-company"></input>
     </div>
-     <div class="form-group">
+     <div class="">
       {{!-- <label for="job-salary">salary:</label> --}}
-      <input class="form-input" placeholder="Salary" type="text" id="job-salary" name="job-salary"></input>
+      <input class="form-input form-control-lg col-3" placeholder="Salary" type="text" id="job-salary" name="job-salary"></input>
     </div>
-      <div class="form-group">
+      <div class="">
 
-      <input class="form-input" placeholder="Status" type="text" id="job-status" name="job-status"></input>
+      <input class="form-input form-control-lg col-3" placeholder="Status" type="text" id="job-status" name="job-status"></input>
     </div>
-    <div class="form-group">
+     <div class="">
+      {{!-- <label for="job-desc">description:</label> --}}
+      <textarea class="form-input form-control-lg col-lg-3" placeholder="Description"id="job-desc" name="job-desc"></textarea>
+    </div>
+    <div class="">
       <button type="submit" id="job-submit" class="btn btn-primary">Create</button>
     </div>
 </form>
@@ -38,11 +37,11 @@
 
 {{!-- CARD LAYOUT --}}
 {{#if user.jobs.length}}
-<div class="container">
+<div class="container mt-5">
 <div><h1  class="text-center">Applied</h1>
 {{#each user.jobs as |job| }}
 {{!-- {{#if user.jobs.status === "applied"}} --}}
-<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+<div class="card text-white bg-info  mb-3" style="max-width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{job.title}}</h5>
      <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
@@ -52,7 +51,7 @@
       <a  href="{{job.url}}" class="card-link text-light">{{job.url}}</a>
  
  <select class="form-select form-select-sm  mt-3 mb-3"  class="dropdown-menu" aria-label=".form-select-lg example">
-  <option selected >Select a status</option>
+  <option selected>Select a status</option>
   <option value="Applied">Applied</option>
   <option value="Interviewing">Interviewing</option>
   <option value="Onboarding">Onboarding</option>
