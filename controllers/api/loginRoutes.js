@@ -9,7 +9,6 @@ const { Users } = require("../../models");
 router.post("/", async (req, res) => {
     console.log("================ loginRoutes - post/ =================")
     try {
-        console.log(req.body)
         const userData = await Users.create(req.body);
         
         const transporter = nodemailer.createTransport({
@@ -28,7 +27,6 @@ router.post("/", async (req, res) => {
         };
 
         transporter.sendMail(mailOptions, function(error, info) {
-
             if (error) {
                 console.log(error);
             } else {
@@ -68,7 +66,7 @@ router.post("/login", async (req, res) => {
             res.status(400).json({ message: "Incorrect email or password" });
             return;
         }
-        console.log(userData)
+
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
