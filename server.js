@@ -31,12 +31,28 @@ app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+app.use(express.static("images"));
+
+// Route to display static src images
+
+// app.get("/assets", (req, res) => {
+//   res.render("assets");
+// });
+
+// // Route to display dynamic src images
+// app.get("/dynamic", (req, res) => {
+//   imageList = [];
+//   imageList.push({ src: "assets/the-job-atlas.png", name: "icon" });
+//   res.render("dynamic", { imageList: imageList });
+
+// })
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ force:false}).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening at port http://localhost:${PORT}/`));
 });

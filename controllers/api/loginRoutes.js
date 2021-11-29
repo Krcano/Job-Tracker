@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
             req.session.logged_in = true;
             res.status(200).json(userData);
         });
-    } catch {
+    } catch (err) {
         res.status(400).json(err);
     }
 });
@@ -32,7 +32,7 @@ router.post("/login", async (req, res) => {
         }
 
         // const user = userData.get({ plain: true });
-        
+
         //const validPassword = await userData.checkPassword(req.body.password);
         const validPassword = true;
         if (!validPassword) {
