@@ -2,11 +2,11 @@
 {{!-- homepage should have reviews and job tracking cards --}}
 
 
-<form class="row g-3 new-project-form ms-5 mx-auto">
+<form class="row g-3 new-project-form ms-5">
 
     <div class="">
       <h3>Create a Review: </h3>
-      <input class="form-input form-control-lg input-group-md col-3" type="text" placeholder="Review Name"id="review-name" name="review-name" />
+      <input class="form-input form-control-lg input-group-md col-3" type="text" placeholder="Company Name"id="name" name="review-name" />
     </div>
    
      <div class="">
@@ -49,8 +49,7 @@
   <div class="card-body">
     <h5 class="card-title">{{review.name}}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{company}}</h6>
-       <textarea class="card-text">{{review.review_text}}.</textarea>
-  
+      <textarea class="card-text">{{review.review_text}}.</textarea>
       <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button> 
     <button class="btn btn-sm btn-primary" data-id="{{review.id}}">Update</button>
  
@@ -60,3 +59,4 @@
 {{!-- {{/if}} --}}
 {{/each}}</div>
 {{/if}}
+<script src="./js/feed.js"></script>

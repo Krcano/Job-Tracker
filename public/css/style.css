@@ -24,7 +24,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-content: center;
-  /* flex-wrap: wrap;  CARD WRAPPING DOESNT WORK*/
+  flex-direction: row;
 }
 .card-container {
   border: solid lightblue 3px;
