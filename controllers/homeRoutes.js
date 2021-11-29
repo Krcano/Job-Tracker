@@ -47,25 +47,20 @@ router.get("/profile", async (req, res) => {
       ],
     });
 
-    console.log("userData run 1")
+    console.log("userData run 1");
     console.log(userData);
 
-
     if (userData === null) {
-      console.log("IN IF =======================")
+      console.log("IN IF =======================");
       userData = await Users.findByPk(req.session.user_id, {
         attributes: { exclude: ["password"] },
       });
       console.log(userData);
     }
 
-
-
-
     const user = userData.get({ plain: true });
     console.log(user);
-    
-    
+
     res.render("profile", {
       user,
       logged_in: true,

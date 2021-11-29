@@ -10,36 +10,27 @@
     </div>
    
      <div class="">
-      <textarea class="form-input form-control-lg col-lg-3" placeholder="Review"id="review-text" name="review"></textarea>
+      <textarea maxlength="150" class="form-input form-control-lg col-lg-3" placeholder="Review"id="review-text" name="review"></textarea>
     </div>
     <div class="">
       <button type="submit" id="review-button" class="btn btn-primary">Create</button>
     </div>
     
 </form>
-{{!-- -------------------------------------------------------------------- --}}
 
-
-{{!-- ------------------------------------------------------------------ --}}
 
 
 {{#if reviews.length}}
 <div class="container mt-5">
 {{#each reviews as |review| }}
-{{!-- {{#if user.jobs.status === "applied"}} --}}
-<div class="card text-white bg-info  mb-3" style="max-width: 18rem;">
-    <div class="card-header">Created by {{review.user.first_name}} {{review.users.last_name}} on {{format_date review.date_created}}</div>
-  <div class="card-body">
-    <h5 class="card-title">{{review.name}}</h5>
+<div class="card  mb-3 shadow rounded" style="max-width: 18rem;">
+    <div class="card-header text-white bg-primary">Created by {{review.user.first_name}} {{review.users.last_name}} on {{format_date review.date_created}}</div>
+  <div class="reviw-card-body card-body">
+    <h5 class="card-title text-center">{{review.name}}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{company}}</h6>
-      <textarea class="card-text">{{review.review_text}}.</textarea>
-      <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button> 
-    <button class="btn btn-sm btn-primary" data-id="{{review.id}}">Update</button>
- 
-
+    <div class="text-container"><p class="card-text">{{review.review_text}}.</p></div>
   </div>
 </div>
-{{!-- {{/if}} --}}
 {{/each}}</div>
 {{/if}}
 <script src="./js/feed.js"></script>

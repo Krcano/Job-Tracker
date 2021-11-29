@@ -1,10 +1,10 @@
 //connecting everything in API folder
 
 //connects to the router
-const router = require('express').Router();
+const router = require("express").Router();
 
 //connects to the login routes
-const loginRoutes = require('./loginRoutes');
+const loginRoutes = require("./loginRoutes");
 
 //connects to the job routes
 // const jobRoutes = require('./jobRoutes');
@@ -12,7 +12,7 @@ const loginRoutes = require('./loginRoutes');
 const profileRoutes = require("./profileRoutes");
 
 // url.com/users
-router.use('/users', loginRoutes);
+router.use("/users", loginRoutes);
 
 //url.com/jobs
 // router.use('/jobs', jobRoutes);

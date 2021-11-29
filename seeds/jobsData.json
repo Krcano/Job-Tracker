@@ -1,32 +1,14 @@
 [
     {
-      "company": "The School ",
-      "title": "UCR instructor",
-      "location": "place",
-      "description": "describe",
-      "salary": "100.10",
-      "url": "www.testjobs.com",
-      "status": "rejected",
+      "company": "UCR",
+      "title": "Bootcamp instructor",
+      "location": "remote",
+      "description": "Instruct the Full-Stack Web Development Course",
+      "salary": "100.000",
+      "url": "indeed.com",
+      "status": "Rejected",
       "users_id": 2
-    },
-    {
-        "company": "The other place ",
-        "title": "Some other job",
-        "location": "other place",
-        "description": "describe",
-        "salary": "200.20",
-        "url": "www.testjobs2.com",
-        "status": "rejected",
-        "users_id": 2
-      },
-      {
-        "company": "The right place ",
-        "title": "The right  job",
-        "location": "Los Angeles",
-        "description": "describe",
-        "salary": "300.30",
-        "url": "www.testjobs2.com",
-        "status": "rejected",
-        "users_id": 3
-      }
+    }
+   
   ]
+   

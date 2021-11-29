@@ -24,7 +24,7 @@
     </div>
      <div class="mt-3">
       
-      <input class="form-input form-control-lg col-3" placeholder="Salary" type="text" id="job-salary" name="job-salary"></input>
+      <input class="form-input form-control-lg col-3" placeholder="Salary (please enter a decimal value)" type="text" id="job-salary" name="job-salary"></input>
     </div>
       <div class="mt-3">
 
@@ -52,30 +52,29 @@
 
 {{!-- CARD LAYOUT --}}
 {{#if user.jobs.length}}
-<div class="container mt-5">
-<div><h1  class="text-center">Jobs:</h1>
+<div class=" mt-5">
+<div class=" container">
+  <h1  class="text-center">Jobs:</h1>
 {{#each user.jobs as |job| }}
-{{!-- {{#if user.jobs.status === "applied"}} --}}
-<div class="card text-white bg-info  mb-3" style="max-width: 18rem;">
+<div class="card text-white bg-primary  shadow rounded mb-3" style="max-width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{job.title}}</h5>
      <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
      <p class="card-text">{{job.location}}</p>
      <p class="card-text">{{job.description}}</p>
-      <p class="card-text">{{job.salary}}</p>
+      <p class="card-text">${{job.salary}}</p>
       <a  href="{{job.url}}" class="card-link text-light">{{job.url}}</a>
- 
- <select class="form-select form-select-sm  mt-3 mb-3"  class="dropdown-menu" aria-label=".form-select-lg example">
+  <p class="card-text">{{job.status}}</p>
+ {{!-- <select class="form-select form-select-sm  mt-3 mb-3"  class="dropdown-menu" aria-label=".form-select-lg example">
   <option selected>Select a status</option>
   <option value="Applied">Applied</option>
   <option value="Interviewing">Interviewing</option>
   <option value="Onboarding">Onboarding</option>
   <option value="Rejected">Rejected</option>
-</select>
+</select> --}}
 
   </div>
 </div>
-{{!-- {{/if}} --}}
 {{/each}}</div>
 
 </div>

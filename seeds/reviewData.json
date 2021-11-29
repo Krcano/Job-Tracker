@@ -1,17 +1,17 @@
 [
     {
-      "review_text": "Review content 1 ",
-      "name": "UCR",
+      "review_text": " If you work here you need to be good at time management to complete some of your tasks. It's not possible to do it all so make sure you set your priorities for the day. Coworkers are great, management is helpful if you reach out to them",
+      "name": "Amazon",
       "users_id": 1
     },
     {
-      "review_text": "Review content 2 ",
-      "name": "UCR 2",
+      "review_text": "Not really worth it unless they tip.",
+      "name": "Doordash",
       "users_id": 2
     },
     {
-      "review_text": "Review content 3",
-      "name": "UCR 3",
+      "review_text": "Depending on the store you choose, the hours are flexible, the staff is helpful staff, and it’s a self-paced environment. App is informative and easy to use.",
+      "name": "Instacard",
       "users_id": 3
     }
   ]

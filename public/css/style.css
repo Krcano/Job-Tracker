@@ -20,33 +20,29 @@ nav {
 }
 
 .container {
-  /* width: auto; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-content: center;
-  flex-direction: row;
 }
 .card-container {
   border: solid lightblue 3px;
   margin: 2em;
   border-radius: 10px;
-  grid-template-rows: repeat(auto-fill, 120px);
+  /* grid-template-rows: repeat(auto-fill, 120px); */
   background-color: rgb(114, 148, 241);
 }
 .card-heading {
   text-align: center;
   grid-column: span 4;
-  /* border: solid pink 3px; */
   color: white;
 }
 .card-content {
   grid-column: span 4;
-  /* border: solid orange 3px; */
   padding: 1em;
   text-align: start;
   color: white;
 }
-.login-container{
+.login-container {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
@@ -54,36 +50,17 @@ nav {
   width: 350px;
   height: 200px;
   align-items: center;
-
 }
-.login-form{
+.login-form {
   display: flex;
-    /* flex-direction: column; */
-    position: absolute;
-    /* top: 50%; */
-    left: 50%;
-    /* margin: -25px 0 0 -25px; */
-    align-content: stretch;
-    justify-content: center;
+  position: absolute;
+  left: 50%;
+  align-content: stretch;
+  justify-content: center;
 }
 
-/* FOR ALL FORM RELEATED THINGS */
-/* form .form-group {
-    display: block;
-    width: 100%;
-    margin: 0.625rem 0;
-  }
-  form .form-input,
-form .form-textarea {
-  display: block;
+.review-card-body {
+  background-color: white;
+  color: black;
 }
-form .form-input {
-    width: 30%;
-    padding: 0.75rem;
-    color: #1a1a1a;
-    background-color: #ffffff;
-    margin: 0.625rem 0;
-    font-size: 1.2rem;
-    border: 1px solid #484848;
-    border-radius: 0.3rem;
-  } */
+
