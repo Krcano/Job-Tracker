@@ -26,11 +26,11 @@
   {{!-- image end --}}
               <a href="/">Atlas</a>
             </h1>
-            <nav>
+            <nav class="d-flex justify-content-end me-5">
                 {{!-- if logged in in it the page will go to the dashboard with all the applications for that user --}}
                 {{#if logged_in}}
-                <a href="/profile">Profile</a> |
-                <button class="no-button" id="logout">Logout</button>
+                <a class="me-2"href="/profile">Profile </a> | 
+                <a class="ms-2" href="/" id="logout"> Logout</a>
                 {{else}}
                 <a href="/login">Login</a>
                 {{/if}}

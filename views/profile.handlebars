@@ -1,5 +1,5 @@
 {{!-- User Dashboard --}}
-<div>
+<div class="mt-4 ms-5">
   <div>
     <h2>Welcome, {{user.first_name}}!</h2>
   </div>
@@ -8,23 +8,29 @@
 {{!-- Where the jobs are--}}
 
 {{!-- FORM LAYOUT for creating the job card --}}
-<div class="job-create">
-<form class="form new-project-form">
-    <div class="form-group">
-      <label for="job-title">Job Title:</label>
-      <input class="form-input" type="text" id="job-title" name="job-title" />
+<form class="row g-3 new-project-form ms-5 mx-auto">
+    <div class="">
+      {{!-- <label for="job-title">job title:</label> --}}
+      <input class="form-input form-control-lg input-group-md col-3" type="text" placeholder="Job Title"id="job-title" name="job-title" />
     </div>
-    
-    <div class="form-group">
-      <label for="job-desc">Description:</label>
-      <textarea class="form-input" id="job-desc" name="job-desc"></textarea>
+    <div class="">
+      {{!-- <label for="job-company">Company:</label> --}}
+      <input class="form-input  form-control-lg col-3" placeholder="Company"id="job-company" type="text"name="job-company"></input>
     </div>
-    <div class="form-group">
-      <label for="job-salary">Salary:</label>
-      <textarea class="form-input" id="job-salary" name="job-salary"></textarea>
+     <div class="">
+      {{!-- <label for="job-salary">salary:</label> --}}
+      <input class="form-input form-control-lg col-3" placeholder="Salary" type="text" id="job-salary" name="job-salary"></input>
     </div>
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Create</button>
+      <div class="">
+
+      <input class="form-input form-control-lg col-3" placeholder="Status" type="text" id="job-status" name="job-status"></input>
+    </div>
+     <div class="">
+      {{!-- <label for="job-desc">description:</label> --}}
+      <textarea class="form-input form-control-lg col-lg-3" placeholder="Description"id="job-desc" name="job-desc"></textarea>
+    </div>
+    <div class="">
+      <button type="submit" id="job-submit" class="btn btn-primary">Create</button>
     </div>
     </div>
 </form>
@@ -32,34 +38,113 @@
 
 {{!-- CARD LAYOUT --}}
 {{#if user.jobs.length}}
-<div class="container">
-
-{{!-- Created each individual card --}}
+<div class="container mt-5">
+<div><h1  class="text-center">Applied</h1>
 {{#each user.jobs as |job| }}
-<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+{{!-- {{#if user.jobs.status === "applied"}} --}}
+<div class="card text-white bg-info  mb-3" style="max-width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{job.title}}</h5>
-     <h6 class="card-subtitle mb-2 text-muted">{{job.company}}</h6>
+     <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
      <p class="card-text">{{job.location}}</p>
      <p class="card-text">{{job.description}}</p>
       <p class="card-text">{{job.salary}}</p>
-      <a  href="{{job.url}}" class="card-link">{{job.url}}</a>
-  <div class="dropdown">
-  <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Status
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Applied</a></li>
-    <li><a class="dropdown-item" href="#">Interviewing</a></li>
-    <li><a class="dropdown-item" href="#">Onboarding</a></li>
-    <li><a class="dropdown-item" href="#">Rejected</a></li>
+      <a  href="{{job.url}}" class="card-link text-light">{{job.url}}</a>
+ 
+ <select class="form-select form-select-sm  mt-3 mb-3"  class="dropdown-menu" aria-label=".form-select-lg example">
+  <option selected>Select a status</option>
+  <option value="Applied">Applied</option>
+  <option value="Interviewing">Interviewing</option>
+  <option value="Onboarding">Onboarding</option>
+  <option value="Rejected">Rejected</option>
+</select>
 
-  </ul>
-</div>
   </div>
 </div>
+{{!-- {{/if}} --}}
+{{/each}}</div>
+
+<div ><h1  class="text-center">Interviewing</h1>
+{{!-- Created each individual card --}}
+{{#each user.jobs as |job| }}
+{{!-- {{#if user.jobs.status === "applied"}} --}}
+<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{job.title}}</h5>
+     <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
+     <p class="card-text">{{job.location}}</p>
+     <p class="card-text">{{job.description}}</p>
+      <p class="card-text">{{job.salary}}</p>
+      <a  href="{{job.url}}" class="card-link text-light">{{job.url}}</a>
+ 
+ <select class="form-select form-select-sm  mt-3 mb-3"  class="dropdown-menu" aria-label=".form-select-lg example">
+  <option selected >Select a status</option>
+  <option value="Applied">Applied</option>
+  <option value="Interviewing">Interviewing</option>
+  <option value="Onboarding">Onboarding</option>
+  <option value="Rejected">Rejected</option>
+</select>
+
+  </div>
+</div>
+{{!-- {{/if}} --}}
 {{/each}}
 </div>
+<div><h1 class="text-center">Onboarding</h1>
+{{!-- Created each individual card --}}
+{{#each user.jobs as |job| }}
+{{!-- {{#if user.jobs.status === "applied"}} --}}
+<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{job.title}}</h5>
+     <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
+     <p class="card-text">{{job.location}}</p>
+     <p class="card-text">{{job.description}}</p>
+      <p class="card-text">{{job.salary}}</p>
+      <a  href="{{job.url}}" class="card-link text-light">{{job.url}}</a>
+ 
+ <select class="form-select form-select-sm mt-3 mb-3"  class="dropdown-menu" aria-label=".form-select-lg example">
+  <option selected >Select a status</option>
+  <option value="Applied">Applied</option>
+  <option value="Interviewing">Interviewing</option>
+  <option value="Onboarding">Onboarding</option>
+  <option value="Rejected">Rejected</option>
+</select>
+
+  </div>
+</div>
+{{!-- {{/if}} --}}
+{{/each}}
+</div>
+
+<div><h1 class="text-center">Rejected</h1>
+{{!-- Created each individual card --}}
+{{#each user.jobs as |job| }}
+{{!-- {{#if user.jobs.status === "applied"}} --}}
+<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{job.title}}</h5>
+     <h6 class="card-subtitle mb-2 text-light">{{job.company}}</h6>
+     <p class="card-text">{{job.location}}</p>
+     <p class="card-text">{{job.description}}</p>
+      <p class="card-text">{{job.salary}}</p>
+      <a  href="{{job.url}}" class="card-link text-light">{{job.url}}</a>
+ 
+ <select class="form-select form-select-sm  mt-3 mb-3"   onchange="show()"class="dropdown-menu" aria-label=".form-select-lg example">
+  <option selected >Select a status</option>
+  <option value="Applied">Applied</option>
+  <option value="Interviewing">Interviewing</option>
+  <option value="Onboarding">Onboarding</option>
+  <option value="Rejected">Rejected</option>
+</select>
+
+  </div>
+</div>
+{{!-- {{/if}} --}}
+{{/each}}
+</div>
+</div>
 {{/if}}
+<script src="./js/profile.js"></script>
 
 
