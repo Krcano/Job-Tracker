@@ -19,7 +19,7 @@ To install this project you must first have Node.js. After you can download all 
 
 ## Usage
 
-To get started the user must login into their account if one is already created or if they are a new user they can create an account. Upon creating a new account you will receive a welcome email from Atlas. Once you login/sign up the user will be redirected to their profile page where they can create a job appplication card with by filling in all the fields of the form like the url for where the applied for the job, the name of the role, salary, company name, where it's located, the status of your job application, whether you are interviewing, are be onboarded or, have been rejected. You can also create reviews on your homepage by filling out the form based on your experience through the application process or your experience as an employee there. 
+To get started the user must login into their account if one is already created or if they are a new user they can create an account. Upon creating a new account you will receive a welcome email from Atlas. Once you login/sign up the user will be redirected to their profile page where they can create a job appplication card with by filling in all the fields of the form like the url for where the applied for the job, the name of the role, salary, company name, where it's located, the status of your job application, whether you are interviewing, are be onboarded or, have been rejected. You can also create reviews on your homepage by filling out the form based on your experience through the application process or your experience as an employee there.
 
 ## Credits
 
