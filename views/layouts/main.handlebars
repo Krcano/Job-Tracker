@@ -30,7 +30,9 @@
                 {{!-- if logged in in it the page will go to the dashboard with all the applications for that user --}}
                 {{#if logged_in}}
                 <a class="me-2"href="/profile">Profile </a> | 
-                <a class="ms-2" href="/" id="logout"> Logout</a>
+                <a class="ms-2 me-2" href="/">Home</a> |
+                <a class="ms-2 " href="/" id="logout"> Logout </a> 
+                
                 {{else}}
                 <a href="/login">Login</a>
                 {{/if}}
