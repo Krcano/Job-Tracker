@@ -1,6 +1,5 @@
 // Function to create a job using the form
 const createJobFormHandler = async (event) => {
-<<<<<<< HEAD
     event.preventDefault();
     console.log("SOMETHING SOMETHING ---------------------")
 
@@ -36,13 +35,13 @@ const createReviewFormHandler = async (event) => {
     event.preventDefault();
 
     // get values
-    const reviewText = document.querySelector("#review-text").value.trim();
-    const reviewName = document.querySelector("#review-name").value.trim();
+    const review_text = document.querySelector("#review-text").value.trim();
+    const review_name = document.querySelector("#review-name").value.trim();
 
-    if (reviewText && reviewName) {
+    if (review_text && review_name) {
         const response = await fetch("api/profile/createreview", {
             method: "POST",
-            body: JSON.stringify({ reviewText, reviewName }),
+            body: JSON.stringify({ review_text, review_name }),
             headers: { "Content-Type": "application/json"}
         });
 
@@ -58,55 +57,4 @@ const createReviewFormHandler = async (event) => {
 };
 
 document.querySelector("#job-button").addEventListener("click", createJobFormHandler);
-// document.querySelector("#review-button").addEventListener("click", createReviewFormHandler);
-=======
-  event.preventDefault();
-
-  // get values
-  const job_title = document.querySelector("#job-title").value.trim();
-  const job_company = document.querySelector("#job-company");
-  const description = document.querySelector("#job-desc").value.trim();
-  const salary = document.querySelector("#job-salary").value.trim();
-
-  if (job_title && description && salary && job_company) {
-    // create post request
-    const response = await fetch("api/users/profile", {
-      method: "POST",
-      body: JSON.stringify({ job_company, job_title, description, salary }),
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-
-  if (response.ok) {
-    console.log("REPLACING LOCATION !!!!!!!!!!!");
-    document.location.replace("/profile");
-  } else {
-    alert(response.statusText);
-  }
-};
-
-const createReviewFormHandler = async (event) => {
-  // get values
-};
-
-
-// // jquery research
-// $(".dropdown-menu li a").click(function() {
-//   $(this).parents(".dropdown").find('.btn').html($(this).text());
-//   $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
-// });
-// vanilla js research
-
-
-
-
-
-
-
-
-
-
-document
-  .querySelector("#job-submit")
-  .addEventListener("click", createJobFormHandler);
->>>>>>> 21eb5b19837ccf2c0c6e538037b0b283b42085db
+document.querySelector("#review-button").addEventListener("click", createReviewFormHandler);
