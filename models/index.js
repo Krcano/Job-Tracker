@@ -13,5 +13,8 @@ Users.hasMany(Reviews, {
 Reviews.belongsTo(Users, {
   foreignKey: "users_id",
 });
+// Jobs.belongsTo(Users, {
+//   foreignKey: "users_id"
+// })
 
 module.exports = { Users, Jobs, Reviews }
