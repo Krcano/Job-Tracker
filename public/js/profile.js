@@ -35,13 +35,13 @@ const createReviewFormHandler = async (event) => {
     event.preventDefault();
 
     // get values
-    const reviewText = document.querySelector("#review-text").value.trim();
-    const reviewName = document.querySelector("#review-name").value.trim();
+    const review_text = document.querySelector("#review-text").value.trim();
+    const review_name = document.querySelector("#review-name").value.trim();
 
-    if (reviewText && reviewName) {
+    if (review_text && review_name) {
         const response = await fetch("api/profile/createreview", {
             method: "POST",
-            body: JSON.stringify({ reviewText, reviewName }),
+            body: JSON.stringify({ review_text, review_name }),
             headers: { "Content-Type": "application/json"}
         });
 
@@ -57,4 +57,4 @@ const createReviewFormHandler = async (event) => {
 };
 
 document.querySelector("#job-button").addEventListener("click", createJobFormHandler);
-// document.querySelector("#review-button").addEventListener("click", createReviewFormHandler);
+document.querySelector("#review-button").addEventListener("click", createReviewFormHandler);

@@ -10,11 +10,12 @@ const withAuth = require("../../utils/auth");
 // Take us to the place to create a new review
 router.post("/", withAuth, async (req, res) => {
     try {
+        // console.log("req.body")
         const newReview = await Reviews.create({
             ...req.body,
             id: req.session.id
         });
-
+        // console.log(newReview)
         res.status(200).json(newReview);
     } catch (err) {
         res.status(400).json(err);
