@@ -72,20 +72,6 @@ router.post("/login", async (req, res) => {
             req.session.logged_in = true;
             res.json({ user: userData, message: "Logged in" });
         });
-
-    //const validPassword = await userData.checkPassword(req.body.password);
-    // const validPassword = true;
-    // if (!validPassword) {
-    //   res.status(400).json({ message: "Incorrect email or password" });
-    //   return;
-    // }
-
-    console.log("=============== loginRoute - post/login ===================");
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-      res.json({ user: userData, message: "Logged in" });
-    });
   } catch (err) {
     res.status(400).json(err);
   }
