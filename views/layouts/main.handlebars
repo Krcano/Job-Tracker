@@ -14,15 +14,25 @@
         <header>
             <h1>
                 {{!-- <span role="img">WHERE THE LOGO GOES</span> --}}
-                <a href="/">Atlas</a>
+  <div class="row">
+  {{#each imageList}}
+  <div class="col-md-4">
+      <div class="text-success" style="font-size: large;
+            font-weight: 700;">{{this.name}}</div>
+         <img src="{{this.src}}">
+      </div>
+      {{/each}}
+  </div>  
+  {{!-- image end --}}
+              <a href="/">Atlas</a>
             </h1>
             <nav>
                 {{!-- if logged in in it the page will go to the dashboard with all the applications for that user --}}
                 {{#if logged_in}}
-                <a href="/profile">profile</a> |
-                <button class="no-button" id="logout">logout</button>
+                <a href="/profile">Profile</a> |
+                <button class="no-button" id="logout">Logout</button>
                 {{else}}
-                <a href="/login">login</a>
+                <a href="/login">Login</a>
                 {{/if}}
             </nav>
         </header>
