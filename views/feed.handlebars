@@ -17,23 +17,46 @@
     </div>
     
 </form>
+{{!-- -------------------------------------------------------------------- --}}
 
-
-<div class="row">
+{{!-- <div class="row">
 {{#if reviews.length}}
-<div class=" col-12 ms-5 mt-5 " style="width: 18rem;">
-    {{#each reviews as |review| }}
+<div class=" col-12 ms-5 mt-5 " style="width: 18rem;"> --}}
+    {{!-- {{#each reviews as |review| }} --}}
+    {{!-- <div class="card-header">Created by {{review.user.first_name}} {{review.users.last_name}} on {{format_date review.date_created}}</div> --}}
+  {{!-- <div class="card-body"> --}}
+    {{!-- <h5 class="card-title">{{review.name}}</h5> --}}
+    {{!-- Put company here from jobs table --}}
+    {{!-- <h6 class="card-subtitle mb-2 text-muted">{{company}}</h6> --}}
+    {{!-- <p class="card-text">{{review.review_text}}.</p> --}}
+    {{!-- need to use the data-id to target a review and deltet that one  --}}
+    {{!-- <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button> 
+    <button class="btn btn-sm btn-primary" data-id="{{review.id}}">Update</button>
+  </div> --}}
+  {{!-- {{/each}}
+</div>
+{{/if}}
+</div>   --}}
+{{!-- ------------------------------------------------------------------ --}}
+
+
+{{#if reviews.length}}
+<div class="container mt-5">
+{{#each reviews as |review| }}
+{{!-- {{#if user.jobs.status === "applied"}} --}}
+<div class="card text-white bg-info  mb-3" style="max-width: 18rem;">
     <div class="card-header">Created by {{review.user.first_name}} {{review.users.last_name}} on {{format_date review.date_created}}</div>
   <div class="card-body">
     <h5 class="card-title">{{review.name}}</h5>
-    {{!-- Put company here from jobs table --}}
-    {{!-- <h6 class="card-subtitle mb-2 text-muted">{{company}}</h6> --}}
-    <p class="card-text">{{review.review_text}}.</p>
-    {{!-- need to use the data-id to target a review and deltet that one --}}
-    <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button>
+    <h6 class="card-subtitle mb-2 text-muted">{{company}}</h6>
+       <textarea class="card-text">{{review.review_text}}.</textarea>
+  
+      <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button> 
     <button class="btn btn-sm btn-primary" data-id="{{review.id}}">Update</button>
+ 
+
   </div>
-  {{/each}}
 </div>
+{{!-- {{/if}} --}}
+{{/each}}</div>
 {{/if}}
-</div>
