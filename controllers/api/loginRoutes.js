@@ -7,10 +7,6 @@ const { Users } = require("../../models");
 
 // sign up and go to profile page....
 router.post("/", async (req, res) => {
-<<<<<<< HEAD
-  try {
-    const userData = await Users.create(req.body);
-=======
     console.log("================ loginRoutes - post/ =================")
     try {
         console.log(req.body)
@@ -32,7 +28,6 @@ router.post("/", async (req, res) => {
         };
 
         transporter.sendMail(mailOptions, function(error, info) {
->>>>>>> cbf32f8fe5678c2bd316b53ab3f7bb3448d88a5b
 
             if (error) {
                 console.log(error);
@@ -54,18 +49,6 @@ router.post("/", async (req, res) => {
 //login page
 //url.com/login
 router.post("/login", async (req, res) => {
-<<<<<<< HEAD
-  try {
-    const userData = await Users.findOne({
-      where: { email: req.body.email },
-    });
-    if (!userData) {
-      res.status(400).json({ message: "Incorrect email or password" });
-      return;
-    }
-
-    // const user = userData.get({ plain: true });
-=======
     console.log("=============== loginRoute - post/login ===================");
     try {
         const userData = await Users.findOne({
@@ -91,14 +74,13 @@ router.post("/login", async (req, res) => {
             req.session.logged_in = true;
             res.json({ user: userData, message: "Logged in" });
         });
->>>>>>> cbf32f8fe5678c2bd316b53ab3f7bb3448d88a5b
 
     //const validPassword = await userData.checkPassword(req.body.password);
-    const validPassword = true;
-    if (!validPassword) {
-      res.status(400).json({ message: "Incorrect email or password" });
-      return;
-    }
+    // const validPassword = true;
+    // if (!validPassword) {
+    //   res.status(400).json({ message: "Incorrect email or password" });
+    //   return;
+    // }
 
     console.log("=============== loginRoute - post/login ===================");
     req.session.save(() => {
