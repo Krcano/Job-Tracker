@@ -17,7 +17,7 @@ const loginFormHandler = async (event) => {
         console.log(response);
 
         if (response.ok) {
-            console.log("REPLACING LOCATION !!!!!!!!!!!")
+            console.log("----------- REPLACING LOCATION ---------")
             document.location.replace('/profile');
         } else {
             alert(response.statusText);
@@ -29,20 +29,21 @@ const signupFormHandler = async (event) => {
     event.preventDefault();
 
     // COllects the values from the sign up form
-    const firstName = document.querySelector('#first_name-signup').value.trim();
-    const lastName = document.querySelector('#last_name-signup').value.trim();
+    const first_name = document.querySelector('#first_name-signup').value.trim();
+    const last_name = document.querySelector('#last_name-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
-    if (firstName && lastName && email && password) {
+    if (first_name && last_name && email && password) {
         //Send a POST request to the API endpoint
         const response = await fetch('/api/users', {
             method: 'POST',
-            body: JSON.stringify({ firstName, lastName, email, password }),
+            body: JSON.stringify({ first_name, last_name, email, password }),
             headers: { 'Content-Type': 'application/json' }
         });
 
         if (response.ok) {
+            console.log("-------- ACCOUNT CREATED ----------")
             document.location.replace('/profile');
         } else {
             alert(response.statusText);

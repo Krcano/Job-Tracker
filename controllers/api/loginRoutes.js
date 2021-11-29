@@ -1,20 +1,47 @@
 //connects to the router
 const router = require("express").Router();
+const nodemailer = require('nodemailer');
 
 //connects to the Users table in the databse
 const { Users } = require("../../models");
 
 // sign up and go to profile page....
 router.post("/", async (req, res) => {
+    console.log("================ loginRoutes - post/ =================")
     try {
+        console.log(req.body)
         const userData = await Users.create(req.body);
-
-        req.session.save(() => {
-            req.session.id = userData.id;
-            req.session.logged_in = true;
-            res.status(200).json(userData);
+        
+        const transporter = nodemailer.createTransport({
+            service: "Gmail",
+            auth: {
+                user: "atlasjobtracker@gmail.com",
+                pass: "p@ssw0rd321"
+            }
         });
-    } catch {
+
+        const mailOptions = {
+            from: "atlasjobtracker@gmail.com",
+            to: req.body.email,
+            subject: "Sign Up Confirmation",
+            text: "Welcome! Thank you for signing up."
+        };
+
+        transporter.sendMail(mailOptions, function(error, info) {
+
+            if (error) {
+                console.log(error);
+            } else {
+                console.log("Email SENT: " + info.response);
+            }
+        });
+        console.log(userData);
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+            res.json({ user: userData, message: "Account created" });
+        });
+    } catch (err) {
         res.status(400).json(err);
     }
 });
@@ -22,10 +49,12 @@ router.post("/", async (req, res) => {
 //login page
 //url.com/login
 router.post("/login", async (req, res) => {
+    console.log("=============== loginRoute - post/login ===================");
     try {
         const userData = await Users.findOne({
             where: { email: req.body.email }
         });
+        
         if (!userData) {
             res.status(400).json({ message: "Incorrect email or password" });
             return;
@@ -39,12 +68,7 @@ router.post("/login", async (req, res) => {
             res.status(400).json({ message: "Incorrect email or password" });
             return;
         }
-
-        // part of nodemailer to see if they have been confirmed or verified their email
-        // if(!userData.confirmed){
-        //     throw new Error('Please confirm your email to login')
-        // }
-        console.log("=============== loginRoute - post/login ===================");
+        console.log(userData)
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;

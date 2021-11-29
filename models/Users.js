@@ -38,13 +38,8 @@ Users.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8, 32],
+        len: [2, 32],
       },
-      // added confirmed for nodemailer purposes to check if theyre account has been verified or not
-      confirmed:{
-        type:DataTypes.BOOLEAN,
-        default:false
-      }
     },
   },
   {
