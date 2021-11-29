@@ -28,7 +28,6 @@ nav {
   border: solid lightblue 3px;
   margin: 2em;
   border-radius: 10px;
-  /* grid-template-rows: repeat(auto-fill, 120px); */
   background-color: rgb(114, 148, 241);
 }
 .card-heading {
@@ -63,4 +62,3 @@ nav {
   background-color: white;
   color: black;
 }
-
