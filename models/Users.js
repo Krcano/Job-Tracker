@@ -1,7 +1,7 @@
 //Creates and updates the users table
 const { Model, DataTypes, DATE } = require("sequelize");
 const sequelize = require("../config/connection");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 
 class Users extends Model {
   checkPassword(loginPw) {
@@ -9,7 +9,6 @@ class Users extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-
 
 Users.init(
   {
@@ -38,7 +37,12 @@ Users.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [2, 32],
+        len: [3, 32],
+      },
+      // added confirmed for nodemailer purposes to check if theyre account has been verified or not
+      confirmed: {
+        type: DataTypes.BOOLEAN,
+        default: false,
       },
     },
   },
@@ -49,7 +53,10 @@ Users.init(
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
         return updatedUserData;
       },
     },

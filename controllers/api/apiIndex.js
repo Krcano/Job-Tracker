@@ -7,7 +7,7 @@ const router = require('express').Router();
 const loginRoutes = require('./loginRoutes');
 
 //connects to the job routes
-const jobRoutes = require('./jobRoutes');
+// const jobRoutes = require('./jobRoutes');
 
 const profileRoutes = require("./profileRoutes");
 
@@ -15,7 +15,7 @@ const profileRoutes = require("./profileRoutes");
 router.use('/users', loginRoutes);
 
 //url.com/jobs
-router.use('/jobs', jobRoutes);
+// router.use('/jobs', jobRoutes);
 
 router.use("/profile", profileRoutes);
 
