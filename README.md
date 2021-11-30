@@ -25,6 +25,9 @@ To get started the user must login into their account if one is already created 
 
 [Carlos Hernandez](https://github.com/confusion-matrix), [Christian Castillo](https://github.com/chriscast94), [Kelly Cano](https://github.com/Krcano)
 
+## Technologies
+Javascript, MySQL, CSS, Bootstrap, Handlebars, Nodemailer, Node.js, Heroku
+
 ## License
 
 [License: MIT](https://opensource.org/licenses/MIT)
