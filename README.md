@@ -8,7 +8,7 @@ Our 2nd project
 
 There are so many websites out there to apply for jobs, it can be very hard to keep track of where you applied and off which sites. Our site makes your job hunting that much easier. Atlas allows the user to store the information for their job hunt all in one place as well as create reviews based on their experience of the application/hiring process.
 
-[Link for Deployed App]()
+[Link for Deployed App](https://atlas-job-tracker.herokuapp.com/)
 ![Homepage](./assets/homepage.png)
 ![Profile](./assets/profile_page.png)
 ![Login](./assets/login_page.png)
