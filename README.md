@@ -1,10 +1,6 @@
 # Job-Tracker
 
-Our 2nd project
-
 ![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)
-
-## Description
 
 There are so many websites out there to apply for jobs, it can be very hard to keep track of where you applied and off which sites. Our site makes your job hunting that much easier. Atlas allows the user to store the information for their job hunt all in one place as well as create reviews based on their experience of the application/hiring process.
 
@@ -27,16 +23,17 @@ To get started the user must login into their account if one is already created 
 
 ## Technologies
 
-| Technologies Used | 
-| ------------------| 
+| Technologies Used |
+| ----------------- |
 | JavaScript        |
-|Nodemailer         | 
+| Nodemailer        |
 | Handlebars        |
-|Heroku             |
+| Heroku            |
 | MySQL             |
-| HTML              | 
+| HTML              |
 | CSS               |
 | Bootstrap         |
+
 ## License
 
 [License: MIT](https://opensource.org/licenses/MIT)
